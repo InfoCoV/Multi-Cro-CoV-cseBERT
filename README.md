@@ -17,12 +17,12 @@ Types of features:
 
 **c)**  Joined features a) and b)
 
-# Installation
+## Installation
 Tested on `Python 3.9.9`
 
 `pip install -r requirements.txt` (virtualenv recommended)
 
-# Data placement
+## Data placement
 Original input data: `./data/original/Org-Retweeted-Vectors_preproc.csv`
 
 Create folders for processed data:
@@ -31,10 +31,10 @@ Create folders for processed data:
 
 `./data/prepared/`
 
-# Data exploration and feature analysis
+## Data exploration and feature analysis
 `./notebooks/exploration/features_analysis.ipynb`
 
-# Data Processing and preparation
+## Data Processing and preparation
 Run scripts in the preparation folder:
 
 1. `bert_extract.py` to extract content features
@@ -46,14 +46,14 @@ Alternatively, you can download all the original and prepared data from here: [d
 
 After download, unzip all to `data`.
 
-# Baseline training runs
+## Baseline training runs
 Notebooks in the `notebooks/baselines` folder investigate MLP and Random Forest runs:
 
 1. `content_only_2_labels.ipynb`, content features only
 2. `features_only_2_labels`, network and tabular features without content features
 3. `full_features_2_labels`, all features
 
-# Model training
+## Model training
 Run `train.py "some_config.yaml"` by providing one of the configs in the `configs` folder.
 
 The config file specifies the model type and all related parameters.
