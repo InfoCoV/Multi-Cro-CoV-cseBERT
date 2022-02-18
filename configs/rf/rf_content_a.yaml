@@ -1,0 +1,45 @@
+model_module:
+    models.rf.rf
+normalize_content:
+    true
+data:
+    train:
+        "./data/prepared/content_train_df.pkl"
+    val:
+        "./data/prepared/content_val_df.pkl"
+experiment_root:
+    "./experiments/rf_content_only_a"
+study_seed:
+    4242
+n_trials:
+    50
+default_trials:
+    [
+        {
+         n_estimators: 200,
+         max_depth: 15,
+         min_samples_split: 0.0001,
+         min_samples_leaf: 0.0001,
+         max_samples: 0.4,
+         max_features: 0.13,
+         min_impurity_decrease: 1e-7
+        },
+        {
+        n_estimators: 200,
+         max_depth: 25,
+         min_samples_split: 0.00002,
+         min_samples_leaf: 0.00002,
+         max_samples: 0.4,
+         max_features: 0.2,
+         min_impurity_decrease: 0.00008
+        }
+    ]
+
+n_estimators_min:
+    150
+max_depth_min:
+    15
+max_features_min:
+    0.1
+max_features_max:
+    0.8

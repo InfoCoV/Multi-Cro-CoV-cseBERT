@@ -1,0 +1,65 @@
+id_str [String] The integer representation of the unique identifier for this Tweet.
+created_at [String] UTC time when this Tweet was created. Example:
+full_text [String] tweet content
+retweet_count [Int] Number of times this Tweet has been retweeted.
+favorite_count [Int] Indicates approximately how many times this Tweet has been liked by Twitter users. 
+entities.hashtags [List] hashtag list
+entities.urls [Boolean] true or false if tweet contains url
+entities.media [Boolean] true or false if tweet contains media
+user_id_str [String] The integer representation of the unique identifier for user that created tweet.
+user.screen_name [String] user screen name
+user.followers_count [Int] number of accounts that user is following
+user.friends_count [Int] number of accounts that follow user
+user.statuses_count [Int] number of stautses from user
+user_in_net [Boolean] true or false if we have this user in graph of following users 
+covid_keywords [List] which covid keywords this tweet has
+has_covid_keyword [Boolean] true or false if tweet contains covid keyword
+mentioned_users_ids [List] list of mentioned user ids
+mentioned_users_usernames [List] list of mentioned user usernames
+number_of_mentioned_users [Int] coount of mentioned users
+number_of_hashtags [Int] count of hashtags in tweet
+
+Network measures
+
+tweets_keywords_3_in_degree 
+tweets_keywords_3_out_degree
+tweets_keywords_3_in_strength
+tweets_keywords_3_out_strength
+tweets_keywords_3_eigenvector_in
+tweets_keywords_3_eigenvector_out
+tweets_keywords_3_katz_in
+tweets_keywords_3_katz_out
+tweets_keywords_3_clustering
+tweets_keywords_3_louvian_class
+
+users_mention_in_degree
+users_mention_out_degree
+users_mention_in_strength
+users_mention_out_strength
+users_mention_eigenvector_in
+users_mention_eigenvector_out
+users_mention_katz_in
+users_mention_katz_out
+users_mention_clustering
+
+folowing_users_graph_in_degree
+folowing_users_graph_out_degree
+folowing_users_graph_in_strength
+folowing_users_graph_out_strength
+folowing_users_graph_eigenvector_in
+folowing_users_graph_eigenvector_out
+folowing_users_graph_katz_in
+folowing_users_graph_katz_out
+folowing_users_graph_clustering
+folowing_users_graph_louvian_class
+
+users_reply_in_degree
+users_reply_out_degree
+users_reply_in_strength
+users_reply_out_strength
+users_reply_eigenvector_in
+users_reply_eigenvector_out
+users_reply_katz_in
+users_reply_katz_out
+users_reply_clustering
+users_reply_louvian_class

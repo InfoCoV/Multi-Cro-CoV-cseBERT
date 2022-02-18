@@ -1,0 +1,32 @@
+model_module:
+    models.mlp.mlp
+normalize_content:
+    true
+data:
+    train:
+        "./data/prepared/full_train_df.pkl"
+    val:
+        "./data/prepared/full_val_df.pkl"
+experiment_root:
+    "./experiments/mlp_full"
+study_seed:
+    4242
+n_trials:
+    20
+default_trials:
+    [
+        {
+            "num_layers": 1,
+            "num_hidden_exp_1": 9,
+            "lr_exp": -3,
+            "batch_exp": 8
+        },
+        {
+            "num_layers": 3,
+            "num_hidden_exp_1": 10,
+            "num_hidden_exp_2": 6,
+            "num_hidden_exp_3": 5,
+            "lr_exp": -3,
+            "batch_exp": 5
+        }
+    ]
