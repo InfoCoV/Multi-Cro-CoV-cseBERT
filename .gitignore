@@ -122,3 +122,9 @@ dmypy.json
 *.pkl
 *.npy
 *.csv
+
+# tensorboard events
+events.out.tfevents.*
+
+# checkpoints
+*.ckpt
