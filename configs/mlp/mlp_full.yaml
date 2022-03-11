@@ -12,13 +12,14 @@ experiment_root:
 study_seed:
     4242
 n_trials:
-    20
+    30
 default_trials:
     [
         {
             "num_layers": 1,
             "num_hidden_exp_1": 9,
             "lr_exp": -3,
+            "alpha_exp": -3,
             "batch_exp": 8
         },
         {
@@ -27,6 +28,7 @@ default_trials:
             "num_hidden_exp_2": 6,
             "num_hidden_exp_3": 5,
             "lr_exp": -3,
+            "alpha_exp": -3,
             "batch_exp": 5
         }
     ]
