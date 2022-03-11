@@ -8,7 +8,7 @@ data:
     val:
         "./data/prepared/val_features.pkl"
 experiment_root:
-    "./experiments/rf_features_only_a"
+    "./experiments/rf_features_only"
 study_seed:
     4242
 n_trials:

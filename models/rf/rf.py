@@ -1,3 +1,5 @@
+"""Random forest model definition and experiment setup"""
+
 import logging
 
 
@@ -52,40 +54,40 @@ class Experiments(OptunaExperiments):
     def objective(self, trial):
         n_estimators = trial.suggest_int(
             "n_estimators",
-            config.n_estimators_min,
-            config.n_estimators_max,
-            config.n_estimators_step)
+            self.config.n_estimators_min,
+            self.config.n_estimators_max,
+            self.config.n_estimators_step)
         max_depth = trial.suggest_int(
             "max_depth",
-            config.max_depth_min,
-            config.max_depth_max
+            self.config.max_depth_min,
+            self.config.max_depth_max
         )
         min_samples_split = trial.suggest_float(
             "min_samples_split",
-            config.min_samples_split_min,
-            config.min_samples_split_max,
+            self.config.min_samples_split_min,
+            self.config.min_samples_split_max,
             log=True
         )
         min_samples_leaf = trial.suggest_float(
             "min_samples_leaf",
-            config.min_samples_leaf_min,
-            config.min_samples_leaf_max,
+            self.config.min_samples_leaf_min,
+            self.config.min_samples_leaf_max,
             log=True
         )
         max_samples = trial.suggest_float(
             "max_samples",
-            config.max_samples_min,
-            config.max_samples_max
+            self.config.max_samples_min,
+            self.config.max_samples_max
         )
         max_features = trial.suggest_float(
             "max_features",
-            config.max_features_min,
-            config.max_features_max
+            self.config.max_features_min,
+            self.config.max_features_max
         )
         min_impurity_decrease = trial.suggest_float(
             "min_impurity_decrease",
-            config.min_impurity_decrease_min,
-            config.min_impurity_decrease_max,
+            self.config.min_impurity_decrease_min,
+            self.config.min_impurity_decrease_max,
             log=True
         )
 
