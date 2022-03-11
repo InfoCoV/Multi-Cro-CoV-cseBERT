@@ -8,7 +8,7 @@ from sklearn.preprocessing import RobustScaler, PowerTransformer
 
 
 # %%
-DATA = "../data/orginal/Org-Retweeted-Vectors_preproc.csv"
+DATA = "../data/original/Org-Retweeted-Vectors_preproc.csv"
 
 TRAIN = "../data/intermediary/data_split/train_id_str.txt"
 VAL = "../data/intermediary/data_split/val_id_str.txt"
