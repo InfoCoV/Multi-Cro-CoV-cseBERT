@@ -1,0 +1,39 @@
+model_module:
+    models.node.node
+normalize_content:
+    true
+data:
+    train:
+        "./data/prepared/full_train_df.pkl"
+    val:
+        "./data/prepared/full_val_df.pkl"
+experiment_root:
+    "./experiments/node_full"
+study_seed:
+    4242
+n_trials:
+    50
+default_trials:
+    [
+        {
+         "lr_exp": -3,
+         "alpha_exp": -3,
+         "batch_exp": 8,
+         "num_trees": 2048,
+         "depth": 6
+        },
+        {
+         "lr_exp": -3,
+         "alpha_exp": -3,
+         "batch_exp": 8,
+         "num_trees": 2560,
+         "depth": 6
+        },
+        {
+         "lr_exp": -3,
+         "alpha_exp": -3,
+         "batch_exp": 6,
+         "num_trees": 1024,
+         "depth": 4
+        },
+    ]

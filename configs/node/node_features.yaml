@@ -1,0 +1,39 @@
+model_module:
+    models.node.node
+normalize_content:
+    false
+data:
+    train:
+        "./data/prepared/train_features.pkl"
+    val:
+        "./data/prepared/val_features.pkl"
+experiment_root:
+    "./experiments/node_features_only"
+study_seed:
+    4242
+n_trials:
+    50
+default_trials:
+    [
+        {
+         "lr_exp": -3,
+         "alpha_exp": -3,
+         "batch_exp": 8,
+         "num_trees": 2048,
+         "depth": 6
+        },
+        {
+         "lr_exp": -3,
+         "alpha_exp": -3,
+         "batch_exp": 8,
+         "num_trees": 2560,
+         "depth": 6
+        },
+        {
+         "lr_exp": -3,
+         "alpha_exp": -3,
+         "batch_exp": 6,
+         "num_trees": 1024,
+         "depth": 4
+        },
+    ]
