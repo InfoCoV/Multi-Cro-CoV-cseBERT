@@ -856,8 +856,8 @@ target_range: null
 seed: 42
 n_d: 4
 n_a: 8
-n_steps: 5
-gamma: 1.2224976174626945
+n_steps: 4
+gamma: 1.0494151227066952
 n_independent: 2
 n_shared: 2
 virtual_batch_size: 128
