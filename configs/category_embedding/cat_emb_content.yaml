@@ -1,0 +1,36 @@
+model_module:
+    models.category_embedding.category_embedding
+normalize_content:
+    true
+data:
+    train:
+        "./data/prepared/content_train_df.pkl"
+    val:
+        "./data/prepared/content_val_df.pkl"
+experiment_root:
+    "./experiments/cat_emb_content_only"
+study_seed:
+    4242
+n_trials:
+    100
+default_trials:
+    [
+        {
+            "num_layers": 1,
+            "num_hidden_exp_1": 5,
+            "lr_exp": -3,
+            "alpha_exp": -3,
+            "batch_exp": 5,
+        },
+        {
+            "num_layers": 3,
+            "num_hidden_exp_1": 10,
+            "num_hidden_exp_2": 6,
+            "num_hidden_exp_3": 5,
+            "lr_exp": -3,
+            "alpha_exp": -3,
+            "batch_exp": 5,
+        }
+    ]
+
+"categorical_cols": []

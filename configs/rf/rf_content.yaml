@@ -4,11 +4,11 @@ normalize_content:
     true
 data:
     train:
-        "./data/prepared/full_train_df.pkl"
+        "./data/prepared/content_train_df.pkl"
     val:
-        "./data/prepared/full_val_df.pkl"
+        "./data/prepared/content_val_df.pkl"
 experiment_root:
-    "./experiments/rf_full_a"
+    "./experiments/rf_content_only"
 study_seed:
     4242
 n_trials:

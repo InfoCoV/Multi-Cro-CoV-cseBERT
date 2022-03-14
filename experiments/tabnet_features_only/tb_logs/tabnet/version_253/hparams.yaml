@@ -1,0 +1,145 @@
+target:
+- retweet_label
+continuous_cols:
+- tweets_keywords_3_in_degree
+- tweets_keywords_3_out_degree
+- tweets_keywords_3_in_strength
+- tweets_keywords_3_out_strength
+- tweets_keywords_3_eigenvector_in
+- tweets_keywords_3_eigenvector_out
+- tweets_keywords_3_katz_in
+- tweets_keywords_3_katz_out
+- tweets_keywords_3_clustering
+- users_mention_in_degree
+- users_mention_out_degree
+- users_mention_in_strength
+- users_mention_out_strength
+- users_mention_eigenvector_in
+- users_mention_eigenvector_out
+- users_mention_katz_in
+- users_mention_katz_out
+- users_mention_clustering
+- folowing_users_graph_in_degree
+- folowing_users_graph_out_degree
+- folowing_users_graph_in_strength
+- folowing_users_graph_out_strength
+- folowing_users_graph_eigenvector_in
+- folowing_users_graph_eigenvector_out
+- folowing_users_graph_katz_in
+- folowing_users_graph_katz_out
+- folowing_users_graph_clustering
+- users_reply_in_degree
+- users_reply_out_degree
+- users_reply_in_strength
+- users_reply_out_strength
+- users_reply_eigenvector_in
+- users_reply_eigenvector_out
+- users_reply_katz_in
+- users_reply_katz_out
+- users_reply_clustering
+- log1p_num_hashtags
+- log1p_followers_count
+- log1p_friends_count
+- log1p_statuses_count
+- log1p_num_mentioned
+categorical_cols:
+- entities.urls
+- entities.media
+- user_in_net
+- has_covid_keyword
+- user.followers_isna
+- users_mention_isna
+- following_users_isna
+- users_reply_isna
+date_columns: []
+encode_date_columns: true
+validation_split: 0.2
+continuous_feature_transform: null
+normalize_continuous_features: false
+quantile_noise: 0
+num_workers: 24
+categorical_dim: 8
+continuous_dim: 41
+task: classification
+embedding_dims:
+- - 3
+  - 2
+- - 3
+  - 2
+- - 3
+  - 2
+- - 3
+  - 2
+- - 3
+  - 2
+- - 3
+  - 2
+- - 3
+  - 2
+- - 3
+  - 2
+learning_rate: 0.001
+loss: CrossEntropyLoss()
+metrics:
+- accuracy
+metrics_params:
+- {}
+target_range: null
+seed: 42
+n_d: 16
+n_a: 4
+n_steps: 3
+gamma: 1.2813051170887186
+n_independent: 2
+n_shared: 2
+virtual_batch_size: 128
+mask_type: sparsemax
+_module_src: tabnet
+_model_name: TabNetModel
+_config_name: TabNetModelConfig
+batch_size: 64
+fast_dev_run: false
+max_epochs: 50
+min_epochs: 1
+max_time: null
+gpus: 1
+accumulate_grad_batches: 1
+auto_lr_find: false
+auto_select_gpus: true
+check_val_every_n_epoch: 1
+gradient_clip_val: 0.0
+overfit_batches: 0.0
+deterministic: true
+profiler: null
+early_stopping: valid_loss
+early_stopping_min_delta: 0.001
+early_stopping_mode: min
+early_stopping_patience: 3
+checkpoints: valid_loss
+checkpoints_path: ./experiments/tabnet_features_only/checkpoints
+checkpoints_name: null
+checkpoints_mode: min
+checkpoints_save_top_k: 1
+load_best: true
+track_grad_norm: -1
+project_name: ./experiments/tabnet_features_only/tb_logs
+run_name: tabnet
+exp_watch: null
+log_target: tensorboard
+log_logits: false
+exp_log_freq: 100
+optimizer: AdamW
+optimizer_params: {}
+lr_scheduler: null
+lr_scheduler_params: {}
+lr_scheduler_monitor_metric: valid_loss
+output_dim: 2
+categorical_cardinality:
+- 3
+- 3
+- 3
+- 3
+- 3
+- 3
+- 3
+- 3

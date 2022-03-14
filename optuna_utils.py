@@ -1,3 +1,5 @@
+"""Utilities for Optuna hyperparameter optimization"""
+
 from abc import ABC, abstractmethod
 import logging
 import os
@@ -10,17 +12,6 @@ from data_utils import setup_data
 
 
 LOGGER = logging.getLogger(__name__)
-
-
-# https://optuna.readthedocs.io/en/stable/faq.html#how-can-i-output-a-log-only-when-the-best-value-is-updated
-def logging_callback(study, frozen_trial):
-    previous_best_value = study.user_attrs.get("previous_best_value", None)
-    if previous_best_value != study.best_value:
-        study.set_user_attr("previous_best_value", study.best_value)
-        LOGGER.info(
-            f"Trial {frozen_trial.number} finished"
-            f"with best value: {frozen_trial.value}"
-            f"and parameters: {frozen_trial.params}")
 
 
 class OptunaExperiments(ABC):

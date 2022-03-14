@@ -1,3 +1,5 @@
+"""LGBM model definition and experiment setup"""
+
 import logging
 import warnings
 

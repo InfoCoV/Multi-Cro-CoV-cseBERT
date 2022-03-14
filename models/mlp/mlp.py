@@ -1,5 +1,6 @@
-import logging
+"""MLP model definition and experiment setup"""
 
+import logging
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report
@@ -24,6 +25,8 @@ config = OmegaConf.create(
      "num_hidden_exp_max": 10,
      "lr_exp_min": -4,
      "lr_exp_max": -2,
+     "lr_alpha_min": -4,
+     "lr_alpha_max": -2,
      "batch_exp_min": 5,
      "batch_exp_max": 8}
 )
@@ -44,22 +47,23 @@ class Experiments(OptunaExperiments):
 
     def objective(self, trial):
         num_layers = trial.suggest_int(
-            "num_layers", config.num_layers_min, config.num_layers_max)
+            "num_layers",
+            self.config.num_layers_min, self.config.num_layers_max)
         hidden_layer_sizes = []
         for i in range(1, num_layers + 1):
             size = 2 ** trial.suggest_int(
                 f"num_hidden_exp_{i}",
-                config.num_hidden_exp_min,
-                config.num_hidden_exp_max)
+                self.config.num_hidden_exp_min,
+                self.config.num_hidden_exp_max)
             hidden_layer_sizes.append(size)
         lr_exp = trial.suggest_int(
-            "lr_exp", config.lr_exp_min, config.lr_exp_max)
+            "lr_exp", self.config.lr_exp_min, self.config.lr_exp_max)
         lr = 10 ** lr_exp
         alpha_exp = trial.suggest_int(
-            "alpha_exp", config.lr_exp_min, config.lr_exp_max)
+            "alpha_exp", self.config.lr_alpha_min, self.config.lr_alpha_max)
         alpha = 10 ** alpha_exp
         batch_exp = trial.suggest_int(
-            "batch_exp", config.batch_exp_min, config.batch_exp_max)
+            "batch_exp", self.config.batch_exp_min, self.config.batch_exp_max)
         batch_size = 2 ** batch_exp
 
         clf = MLPClassifier(
